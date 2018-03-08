@@ -2,11 +2,34 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>SmartNinja basic Jinja template</title>
+    <title>Dodajanje filma</title>
 
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-    <h1>Hello, SmartNinja!</h1>
+    <h2>Dodaj film v seznam</h2>
+    <h3>Za dodajanje filma v seznam, izpolni spodnja polja:</h3>
+    <form method="POST" action="/result">
+        <label for="input-naslov_filma">Naslov filma: </label><br>
+        <input type="text" id="input-naslov_filma" name="naslov_filma">
+        <br><br>
+        <label for="input-reziser">Reziser: </label><br>
+        <input type="text" id="input-reziser" name="reziser">
+        <br><br>
+        <label for="input-leto_izida">Leto izida: </label><br>
+        <input type="text" id="input-leto_izida" name="leto_izida">
+        <br><br>
+        <label for="input-slika">URL slike: </label><br>
+        <input type="text" id="input-slika" name="slika">
+        <br><br>
+        Ocena filma:
+        <br>
+        <input type="radio" name="ocena" value="1"> 1<br>
+        <input type="radio" name="ocena" value="2"> 2<br>
+        <input type="radio" name="ocena" value="3"> 3<br>
+        <input type="radio" name="ocena" value="4"> 4<br>
+        <input type="radio" name="ocena" value="5"> 5<br>
+        <br>
+        <button type="submit">Shrani v seznam</button>
 </body>
 </html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Obnovi</title>
+</head>
+<body>
+  <h3>Ali res zelis obnoviti ta film iz skritega seznama?</h3>
+
+   {{ zapis.time_date.strftime('%B %d %Y at %H:%M') }}
+    <p>Naslov: <strong>{{ zapis.naslov }}</strong></p>
+    <p>Reziser: <strong>{{ zapis.reziser }}</strong></p>
+    <p>Uporabnikova ocena: <strong>{{ zapis.ocena }}</strong></p>
+
+    <img src="{{ zapis.url_slike }}" >
+    <br>
+    <br>
+
+    <a href="/skriti_seznam" ><button>NE</button></a>
+
+    <br><br>
+    <form method="POST">
+        <button type="submit">DA</button>
+    </form>
+</body>
+</html>

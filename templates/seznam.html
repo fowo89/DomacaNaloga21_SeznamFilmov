@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h2>Seznam Filmov</h2>
+    {% for shrani in seznam %}
+
+    {{ shrani.time_date.strftime('%B %d %Y at %H:%M') }}
+    <p>Naslov: <strong>{{ shrani.naslov }}</strong></p>
+    <p>Reziser: <strong>{{ shrani.reziser }}</strong></p>
+    <p>Uporabnikova ocena: <strong>{{ shrani.ocena }}</strong></p>
+
+    <img src="{{ shrani.url_slike }}" >
+    <br>
+    <br>
+    <a href="/seznam/{{ shrani.key.id() }}/posodobi" ><button>Posodobi</button></a>
+    <a href="/seznam/{{ shrani.key.id() }}/izbrisi" ><button>Izbrisi</button></a>
+    <br><br><br><br>
+    {% else %}
+        <p>Na seznamu ni zapisov.</p>
+    {% endfor %}
+
+</body>
+</html>

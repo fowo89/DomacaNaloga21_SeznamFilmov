@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Skriti seznam</title>
+</head>
+<body>
+    <h2>Skriti Seznam Filmov</h2>
+    {% for film in seznam %}
+
+    {{ film.time_date.strftime('%B %d %Y at %H:%M') }}
+    <p>Naslov: <strong>{{ film.naslov }}</strong></p>
+    <p>Reziser: <strong>{{ film.reziser }}</strong></p>
+    <p>Uporabnikova ocena: <strong>{{ film.ocena }}</strong></p>
+
+    <img src="{{ film.url_slike }}" >
+    <br>
+    <br>
+    <a href="/skriti_seznam/{{ film.key.id() }}/obnovi" ><button>Obnovi vnos</button></a>
+    <a href="/skriti_seznam/{{ film.key.id() }}/dokoncno_izbrisi" ><button>Dokoncno izbrisi vnos</button></a>
+    <br><br><br><br>
+    {% else %}
+        <p>Na seznamu ni zapisov.</p>
+    {% endfor %}
+
+</body>
+</html>

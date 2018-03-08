@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Posodabljanje podatkov o filmu</title>
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <h2>Posodobi podatke o filmu</h2>
+
+  <form method="POST">
+
+    {{ shrani.time_date.strftime('%B %d %Y at %H:%M') }}
+  <p>Naslov: <strong><input type="text" value="{{ shrani.naslov }}" name="nov_naslov"></strong></p>
+  <p>Reziser: <strong><input type="text" value="{{ shrani.reziser }}" name="nov_reziser"></strong></p>
+  <p>Uporabnikova ocena:
+      <br>
+        <input type="radio" name="ocena" value="1"> 1<br>
+        <input type="radio" name="ocena" value="2"> 2<br>
+        <input type="radio" name="ocena" value="3"> 3<br>
+        <input type="radio" name="ocena" value="4"> 4<br>
+        <input type="radio" name="ocena" value="5"> 5<br>
+        <br></p>
+
+    <p>URL slike: <strong><input type="text" value="{{ shrani.url_slike }}" name="nov_url_slike"></strong></p>
+
+      <button type="submit">Posodobi</button>
+  </form>
+</body>
+</html>

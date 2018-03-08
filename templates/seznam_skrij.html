@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>Ali res zelis izbrisati ta film iz seznama?</h3>
+
+   {{ shrani.time_date.strftime('%B %d %Y at %H:%M') }}
+    <p>Naslov: <strong>{{ shrani.naslov }}</strong></p>
+    <p>Reziser: <strong>{{ shrani.reziser }}</strong></p>
+    <p>Uporabnikova ocena: <strong>{{ shrani.ocena }}</strong></p>
+
+    <img src="{{ shrani.url_slike }}" >
+    <br>
+    <br>
+
+    <a href="/seznam" ><button>NE</button></a>
+
+    <br><br>
+    <form method="POST">
+        <button type="submit">DA</button>
+    </form>
+</body>
+</html>
